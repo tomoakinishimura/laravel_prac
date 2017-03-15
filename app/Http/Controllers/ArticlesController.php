@@ -42,14 +42,23 @@ class ArticlesController extends Controller
         return view('articles.show', compact('article'));
     }
 
+    /*
+     * 記事の投稿
+     * 
+     */
     public function getCreate()
     {
-
+        return view('articles.create');
     }
 
-    public function postCreate()
+    public function postCreate(Request $request)
     {
-
+        $data = $request->all();
+        $this->article->fill($data);
+        $this->article->save();
+        
+        return redirect()->to('articles/index');
+        
     }
 
     public function getEdit()

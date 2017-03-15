@@ -15,9 +15,7 @@
 //    return view('welcome');
 //});
 
-//
-//Route::get('/', 'ArticlesController@getIndex');
-//Route::controller('articles', 'ArticlesController');
-
 Route::get('/', 'ArticlesController@getIndex');
-//Route::controller('articles', 'ArticlesController');
+Route::get('/article/{id}', 'ArticlesController@getShow');
+Route::get('/article/create', 'ArticlesController@getCreate');
+//Route::post('/article/create', 'ArticlesController@postCreate');

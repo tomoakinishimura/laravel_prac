@@ -9,6 +9,7 @@
                 <th>本文</th>
                 <th>作成日時</th>
                 <th>更新日時</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,7 @@
                 <td>{{{ $article->body }}}</td>
                 <td>{{{ $article->created_at }}}</td>
                 <td>{{{ $article->update_at }}}</td>
+                <td><a href="/article/{{{ $article->id }}}" class="btn btn-default btn-xs">詳細</a></td>
             </tr>
             @endforeach
         </tbody>
